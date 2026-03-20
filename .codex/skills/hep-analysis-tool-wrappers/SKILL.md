@@ -10,13 +10,13 @@ Use this skill when the hard part is invoking the right repository code path wit
 ## Quick Start
 
 1. Read only the wrapper file that matches the code path you need:
-   - `skills/tool_wrappers/runtime_and_preflight_wrapper.md`
-   - `skills/tool_wrappers/summary_loader_wrapper.md`
-   - `skills/tool_wrappers/sample_registry_and_metadata_wrapper.md`
-   - `skills/tool_wrappers/selection_and_partition_wrapper.md`
-   - `skills/tool_wrappers/histogram_and_template_wrapper.md`
-   - `skills/tool_wrappers/fit_and_significance_wrapper.md`
-   - `skills/tool_wrappers/report_packaging_wrapper.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/runtime_and_preflight_wrapper.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/summary_loader_wrapper.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/sample_registry_and_metadata_wrapper.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/selection_and_partition_wrapper.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/histogram_and_template_wrapper.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/fit_and_significance_wrapper.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/report_packaging_wrapper.md`
 2. If this is the first command in the repo or the shell is not normalized, pair this skill with the existing session skill `hep-analysis-env-setup`.
 3. Always read the paired repo-local reviewer before treating a wrapper result as complete.
 

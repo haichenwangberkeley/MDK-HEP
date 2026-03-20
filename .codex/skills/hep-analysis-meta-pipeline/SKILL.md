@@ -1,6 +1,6 @@
 ---
 name: hep-analysis-meta-pipeline
-description: Use when you want the refactored main HEP orchestration skill in this repository. This skill is the session-ready entrypoint for the pipeline defined in `skills/pipelines/hep_analysis_meta_pipeline.md`, covering runtime setup, sample preparation, selections, modeling, statistical stages, validation, and report or handoff flow for ATLAS Open Data H-to-gammagamma work.
+description: Use when you want the refactored main HEP orchestration skill in this repository. This skill is the session-ready entrypoint for the vendored refactored HEP pipeline, covering runtime setup, sample preparation, selections, modeling, statistical stages, validation, and report or handoff flow for ATLAS Open Data H-to-gammagamma work.
 ---
 
 # HEP Analysis Meta Pipeline
@@ -9,13 +9,13 @@ Use this as the single session-skill entrypoint for the refactored HEP workflow 
 
 ## Quick Start
 
-1. Read `skills/pipelines/hep_analysis_meta_pipeline.md`.
+1. Read `references/refactored/skills/pipelines/hep_analysis_meta_pipeline.md`.
 2. Also read:
-   - `skills/shared/hep_domain_guardrails.md`
-   - `skills/shared/pipeline_logging_contract.md`
-   - `skills/shared/artifact_matrix.md`
-3. Load only the repo-local pattern file needed for the current stage or blocker.
-4. Prefer the refactored repo-local files under `skills/` over the legacy `.codex/skills/hep-meta-first/references/` contracts.
+   - `references/refactored/skills/shared/hep_domain_guardrails.md`
+   - `references/refactored/skills/shared/pipeline_logging_contract.md`
+   - `references/refactored/skills/shared/artifact_matrix.md`
+3. Load only the vendored pattern file needed for the current stage or blocker.
+4. Prefer the vendored refactored files under `references/refactored/skills/` over the legacy `.codex/skills/hep-meta-first/references/` contracts.
 
 ## Use This Skill For
 

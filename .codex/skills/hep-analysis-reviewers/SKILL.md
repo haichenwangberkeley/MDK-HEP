@@ -10,16 +10,16 @@ Use this skill when the task is to validate a stage, block unsafe progression, o
 ## Quick Start
 
 1. Read only the reviewer file that matches the current gate:
-   - `skills/reviewers/preflight_fact_check_reviewer.md`
-   - `skills/reviewers/analysis_summary_reviewer.md`
-   - `skills/reviewers/nominal_sample_and_normalization_reviewer.md`
-   - `skills/reviewers/blinding_and_visualization_reviewer.md`
-   - `skills/reviewers/statistical_readiness_reviewer.md`
-   - `skills/reviewers/data_mc_discrepancy_reviewer.md`
-   - `skills/reviewers/reproducibility_and_handoff_reviewer.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/reviewers/preflight_fact_check_reviewer.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/reviewers/analysis_summary_reviewer.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/reviewers/nominal_sample_and_normalization_reviewer.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/reviewers/blinding_and_visualization_reviewer.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/reviewers/statistical_readiness_reviewer.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/reviewers/data_mc_discrepancy_reviewer.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/reviewers/reproducibility_and_handoff_reviewer.md`
 2. Pair the reviewer with:
-   - `skills/shared/review_rubric.md`
-   - `skills/shared/evidence_requirements.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/shared/review_rubric.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/shared/evidence_requirements.md`
 3. When a reviewer blocks, route to the smallest matching inversion or generator instead of rerunning everything.
 
 ## What This Skill Covers

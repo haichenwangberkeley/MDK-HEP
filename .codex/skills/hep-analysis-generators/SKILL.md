@@ -10,15 +10,15 @@ Use this skill when the task is to create a concrete analysis artifact in the re
 ## Quick Start
 
 1. Read only the repo-local generator file that matches the artifact you need:
-   - `skills/generators/analysis_spec_generator.md`
-   - `skills/generators/sample_semantics_generator.md`
-   - `skills/generators/event_model_and_partition_generator.md`
-   - `skills/generators/selection_and_yield_generator.md`
-   - `skills/generators/histogram_and_template_generator.md`
-   - `skills/generators/background_and_signal_model_generator.md`
-   - `skills/generators/systematics_and_workspace_generator.md`
-   - `skills/generators/report_package_generator.md`
-2. Also read `skills/shared/evidence_requirements.md`.
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/generators/analysis_spec_generator.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/generators/sample_semantics_generator.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/generators/event_model_and_partition_generator.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/generators/selection_and_yield_generator.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/generators/histogram_and_template_generator.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/generators/background_and_signal_model_generator.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/generators/systematics_and_workspace_generator.md`
+   - `../hep-analysis-meta-pipeline/references/refactored/skills/generators/report_package_generator.md`
+2. Also read `../hep-analysis-meta-pipeline/references/refactored/skills/shared/evidence_requirements.md`.
 3. If the generator depends on a branch decision, load the relevant inversion file before execution.
 4. If the generator calls repo code, pair it with the matching repo-local tool-wrapper file.
 
