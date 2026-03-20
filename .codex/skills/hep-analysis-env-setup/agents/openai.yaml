@@ -1,0 +1,4 @@
+interface:
+  display_name: "HEP Analysis Env Setup"
+  short_description: "Bootstrap local RooFit-ready HEP runtime"
+  default_prompt: "Use $hep-analysis-env-setup to prepare this workspace for H->gammagamma analysis runs and smoke tests."
