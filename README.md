@@ -4,10 +4,10 @@ This repository packages the HEP analysis skills from the `GCT-hep-meta` workspa
 
 ## What is included
 
-- `.codex/skills/`: session-ready Codex skill folders
-- `skills/`: refactored pattern-based source material used by the session skills
+- `.codex/skills/`: session-ready Codex skill folders plus vendored refactored references
+- `.codex/skills/INDEX.md`: quick navigation for the exported session pack
 - `docs/`: audit, migration, and authoring documentation for the skill system
-- `README_skills.md`: architecture overview from the source workspace
+- `README_skills.md`: architecture overview for the refactored pattern system
 
 ## Main entrypoint
 
@@ -32,18 +32,23 @@ Use $hep-analysis-meta-pipeline for this task.
 
 `hep-meta-first` is retained as a legacy skill pack for comparison and migration history.
 
-## Why both `.codex/skills` and `skills/` exist
+## Where the refactored pattern files live
 
 The session skills under `.codex/skills` are the triggerable Codex skill packages.
-They rely on the refactored pattern files under `skills/` plus supporting docs under `docs/`.
+The refactored Tool Wrapper, Generator, Reviewer, Inversion, Pipeline, and shared reference files are vendored under:
 
-This repository keeps both layers together so the packaged session skills remain understandable and maintainable when versioned separately from the analysis code.
+```text
+.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/
+```
+
+This keeps the exported repo self-contained. Other session skills point into that vendored tree by relative path, and the vendored copy also includes `metadata.csv`.
 
 ## Intended workflow
 
-1. Maintain the skill definitions here.
-2. Connect this directory to a GitHub repository.
-3. Push from this directory only, without the analysis code or outputs.
+1. Trigger `$hep-analysis-meta-pipeline` or one of the pattern-specific sibling skills.
+2. Maintain the vendored pattern files under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`.
+3. Keep the historical audit and migration docs under `docs/`.
+4. Version and publish this directory without the analysis code or outputs.
 
 ## Local git notes
 

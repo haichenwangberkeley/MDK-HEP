@@ -2,6 +2,8 @@
 
 Source root audited: `/Users/haichenwang/Work/analysis-automation/.codex/skills/hep-meta-first`
 
+Export note: this audit describes the refactor as it was designed in `GCT-hep-meta`. In this standalone skills repository, the refactored `skills/...` tree is vendored under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`.
+
 ## Source design philosophy
 
 The source pack is a router-centric HEP skill system. One top-level entry skill delegates into a large `references/` library of contract-like markdown files with explicit inputs, outputs, checks, and handoff hints. The pack preserves strong scientific content, but most contracts mix several responsibilities at once:
