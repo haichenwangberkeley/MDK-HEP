@@ -35,18 +35,18 @@ Use $hep-analysis-meta-pipeline for this task.
 ## Where the refactored pattern files live
 
 The session skills under `.codex/skills` are the triggerable Codex skill packages.
-The refactored Tool Wrapper, Generator, Reviewer, Inversion, Pipeline, and shared reference files are vendored under:
+The refactored Tool Wrapper, Generator, Reviewer, Inversion, Pipeline, and shared reference files are bundled under a shared non-skill directory:
 
 ```text
-.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/
+.codex/skills/_hep-analysis-refactored/skills/
 ```
 
-This keeps the exported repo self-contained. Other session skills point into that vendored tree by relative path, and the vendored copy also includes `metadata.csv`.
+This keeps the exported repo self-contained without making one skill depend on another skill's private `references/` directory. The shared reference pack also includes `metadata.csv`.
 
 ## Intended workflow
 
 1. Trigger `$hep-analysis-meta-pipeline` or one of the pattern-specific sibling skills.
-2. Maintain the vendored pattern files under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`.
+2. Maintain the bundled pattern files under `.codex/skills/_hep-analysis-refactored/skills/`.
 3. Keep the historical audit and migration docs under `docs/`.
 4. Version and publish this directory without the analysis code or outputs.
 

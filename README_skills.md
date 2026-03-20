@@ -1,16 +1,16 @@
 # Pattern-Based HEP Skills
 
-This repository packages the refactored HEP analysis skill system as self-contained session skills. The old source pack remains read-only. The operational skill pack lives under `.codex/skills/`, and the refactored pattern files are vendored under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`.
+This repository packages the refactored HEP analysis skill system as self-contained session skills. The old source pack remains read-only. The operational skill pack lives under `.codex/skills/`, and the refactored pattern files are bundled in the shared reference pack under `.codex/skills/_hep-analysis-refactored/skills/`.
 
 ## Path convention
 
 Unless otherwise noted, path examples like `skills/pipelines/hep_analysis_meta_pipeline.md` are relative to:
 
 ```text
-.codex/skills/hep-analysis-meta-pipeline/references/refactored/
+.codex/skills/_hep-analysis-refactored/
 ```
 
-Inside the vendored pattern files themselves, related-skill references are written relative to the current file so they resolve correctly even without a top-level repo `skills/` directory.
+Inside the bundled pattern files themselves, related-skill references are written relative to the current file so they resolve correctly without a top-level repo `skills/` directory and without routing through another skill's private `references/` directory.
 
 ## Architecture
 
@@ -73,7 +73,7 @@ The shared layer provides:
 ## Adding a new skill
 
 1. Pick one dominant pattern using `docs/pattern_authoring_guide.md`.
-2. Add or edit the refactored Markdown contract under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`.
+2. Add or edit the refactored Markdown contract under `.codex/skills/_hep-analysis-refactored/skills/`.
 3. Reuse the templates and rules in `skills/shared/`.
 4. Declare explicit inputs, outputs, evidence, failure modes, and escalation.
 5. Link the skill from `.codex/skills/INDEX.md`.

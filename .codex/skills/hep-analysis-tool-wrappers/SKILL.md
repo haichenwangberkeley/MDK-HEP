@@ -1,6 +1,6 @@
 ---
 name: hep-analysis-tool-wrappers
-description: Use when you need the refactored HEP tool-wrapper skills in this repository to call repo entrypoints safely: runtime and preflight, summary loading, sample registry and metadata, selection and partition execution, histogram and template production, fit and significance execution, or report packaging. Prefer this over the legacy `hep-meta-first` contracts when the task is mainly to drive existing code paths correctly.
+description: Use when you need the refactored HEP tool-wrapper skills from this installed skill pack to call entrypoints in the current analysis project safely: runtime and preflight, summary loading, sample registry and metadata, selection and partition execution, histogram and template production, fit and significance execution, or report packaging.
 ---
 
 # HEP Analysis Tool Wrappers
@@ -9,16 +9,16 @@ Use this skill when the hard part is invoking the right repository code path wit
 
 ## Quick Start
 
-1. Read only the wrapper file that matches the code path you need:
-   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/runtime_and_preflight_wrapper.md`
-   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/summary_loader_wrapper.md`
-   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/sample_registry_and_metadata_wrapper.md`
-   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/selection_and_partition_wrapper.md`
-   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/histogram_and_template_wrapper.md`
-   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/fit_and_significance_wrapper.md`
-   - `../hep-analysis-meta-pipeline/references/refactored/skills/tool_wrappers/report_packaging_wrapper.md`
-2. If this is the first command in the repo or the shell is not normalized, pair this skill with the existing session skill `hep-analysis-env-setup`.
-3. Always read the paired repo-local reviewer before treating a wrapper result as complete.
+1. Read only the bundled wrapper reference that matches the code path you need:
+   - `../_hep-analysis-refactored/skills/tool_wrappers/runtime_and_preflight_wrapper.md`
+   - `../_hep-analysis-refactored/skills/tool_wrappers/summary_loader_wrapper.md`
+   - `../_hep-analysis-refactored/skills/tool_wrappers/sample_registry_and_metadata_wrapper.md`
+   - `../_hep-analysis-refactored/skills/tool_wrappers/selection_and_partition_wrapper.md`
+   - `../_hep-analysis-refactored/skills/tool_wrappers/histogram_and_template_wrapper.md`
+   - `../_hep-analysis-refactored/skills/tool_wrappers/fit_and_significance_wrapper.md`
+   - `../_hep-analysis-refactored/skills/tool_wrappers/report_packaging_wrapper.md`
+2. If this is the first command in the current analysis project or the shell is not normalized, pair this skill with the existing session skill `hep-analysis-env-setup`.
+3. Always read the paired reviewer skill or bundled reviewer reference before treating a wrapper result as complete.
 
 ## What This Skill Covers
 

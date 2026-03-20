@@ -24,7 +24,7 @@ These rules are binding across the new skill system.
 
 ## Sample and normalization policy
 
-- Default central luminosity for this repository is `36.1 fb^-1` unless an explicit approved override is recorded.
+- Default central luminosity for the current analysis project is `36.1 fb^-1` unless an explicit approved override is recorded.
 - Legacy references to `36.0 fb^-1` in the source pack are treated as stale defaults and must not override the repository central-result policy.
 - Use DSID or another stable sample identifier whenever possible.
 - Normalization must use cross section, k-factor, filter efficiency, and signed generator-weight sum.

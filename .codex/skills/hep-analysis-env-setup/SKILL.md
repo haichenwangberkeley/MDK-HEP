@@ -1,11 +1,11 @@
 ---
 name: hep-analysis-env-setup
-description: Prepare this repository for ATLAS Open Data H-to-gammagamma analysis work by selecting the workspace-local `.rootenv` interpreter, exporting repo-local `PYTHONPATH`, configuring writable Matplotlib/fontconfig caches, and verifying PyROOT/RooFit plus required inputs before tests or pipeline runs. Use when Codex is about to run `pytest`, `analysis.cli`, smoke tests, fit/significance code, or ad hoc studies in this workspace and wants to avoid shell/environment rediscovery.
+description: Prepare the current analysis project for ATLAS Open Data H-to-gammagamma work by selecting the project-local `.rootenv` interpreter, exporting project-local `PYTHONPATH`, configuring writable Matplotlib and fontconfig caches, and verifying PyROOT, RooFit, and required inputs before tests or pipeline runs.
 ---
 
 # HEP Analysis Env Setup
 
-Use this skill before the first command in this repository, after shell/import failures, or when a fresh agent needs a runnable HEP analysis environment quickly.
+Use this skill before the first command in the current analysis project, after shell or import failures, or when a fresh agent needs a runnable HEP analysis environment quickly.
 
 ## Quick Start
 

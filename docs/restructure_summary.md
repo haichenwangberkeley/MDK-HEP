@@ -1,6 +1,6 @@
 # Restructure Summary
 
-Export note: in this standalone skills repository, the refactored pattern tree is vendored under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`. Path examples written as `skills/...` refer to that vendored tree rather than to a required top-level repo directory.
+Export note: in this standalone skills repository, the refactored pattern tree is bundled under `.codex/skills/_hep-analysis-refactored/skills/`. Path examples written as `skills/...` refer to that bundled tree rather than to a required top-level repo directory.
 
 ## What changed
 

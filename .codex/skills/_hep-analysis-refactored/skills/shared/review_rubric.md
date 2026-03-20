@@ -1,6 +1,6 @@
 # Common Reviewer Rubric
 
-Reviewers in this repository use four outcomes:
+Reviewers in this skill pack use four outcomes:
 
 - `pass`: evidence is complete and the stage may advance
 - `conditional_pass`: minor issues remain but are logged and non-blocking

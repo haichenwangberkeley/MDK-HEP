@@ -2,7 +2,7 @@
 
 Source root audited: `/Users/haichenwang/Work/analysis-automation/.codex/skills/hep-meta-first`
 
-Export note: this audit describes the refactor as it was designed in `GCT-hep-meta`. In this standalone skills repository, the refactored `skills/...` tree is vendored under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`.
+Export note: this audit describes the refactor as it was designed in `GCT-hep-meta`. In this standalone skills repository, the refactored `skills/...` tree is bundled under `.codex/skills/_hep-analysis-refactored/skills/`.
 
 ## Source design philosophy
 

@@ -4,7 +4,7 @@ Source root: `/Users/haichenwang/Work/analysis-automation/.codex/skills/hep-meta
 
 Paths below are relative to that root for old files and relative to `GCT-hep-meta` for new files.
 
-Export note: in this standalone skills repository, the refactored `skills/...` targets are vendored under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`. The table preserves the original refactor target paths for auditability.
+Export note: in this standalone skills repository, the refactored `skills/...` targets are bundled under `.codex/skills/_hep-analysis-refactored/skills/`. The table preserves the original refactor target paths for auditability.
 
 Interpretation note:
 

@@ -4,7 +4,7 @@ Use this reference when sample naming, metadata matching, or nominal background 
 
 ## Binding facts
 
-- The metadata CSV artifact is the authoritative source for cross section, k-factor, filter efficiency, and signed generator-weight sums in this repository. In this vendored pack it lives at `../metadata.csv`; some legacy repo layouts used `skills/metadata.csv`.
+- The metadata CSV artifact is the authoritative source for cross section, k-factor, filter efficiency, and signed generator-weight sums in the current analysis project. In this bundled reference pack it lives at `../metadata.csv`; some legacy repo layouts used `skills/metadata.csv`.
 - Stable identifiers such as DSIDs should be preferred over free-form filename matching.
 - The central Run-2 H to gammagamma normalization policy uses `36.1 fb^-1` unless an approved override is recorded.
 - Effective luminosity should be documented for backgrounds that enter fit-critical template or smoothing decisions.

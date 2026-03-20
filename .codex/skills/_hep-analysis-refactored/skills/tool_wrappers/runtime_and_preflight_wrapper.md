@@ -38,7 +38,7 @@ Use this wrapper when the agent needs to verify that the repository can execute 
 
 ## Call procedure
 
-1. Prefer the repo-local interpreter: `.rootenv/bin/python`.
+1. Prefer the project-local interpreter: `.rootenv/bin/python`.
 2. For bootstrap-only work, run `analysis.cli bootstrap`.
 3. For readiness checks, run `analysis.cli preflight` or `analysis.preflight`.
 4. For integrated smoke or production execution, run `analysis.cli run`.

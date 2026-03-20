@@ -1,21 +1,21 @@
 ---
 name: hep-analysis-meta-pipeline
-description: Use when you want the refactored main HEP orchestration skill in this repository. This skill is the session-ready entrypoint for the vendored refactored HEP pipeline, covering runtime setup, sample preparation, selections, modeling, statistical stages, validation, and report or handoff flow for ATLAS Open Data H-to-gammagamma work.
+description: Use when you want the refactored main HEP orchestration skill from this installed skill pack. This session-ready entrypoint loads the bundled HEP pipeline contracts for the current ATLAS Open Data H-to-gammagamma analysis project, covering runtime setup, sample preparation, selections, modeling, statistical stages, validation, and report or handoff flow.
 ---
 
 # HEP Analysis Meta Pipeline
 
-Use this as the single session-skill entrypoint for the refactored HEP workflow in this workspace.
+Use this as the single session-skill entrypoint for the refactored HEP workflow in the current analysis project.
 
 ## Quick Start
 
-1. Read `references/refactored/skills/pipelines/hep_analysis_meta_pipeline.md`.
+1. Read `../_hep-analysis-refactored/skills/pipelines/hep_analysis_meta_pipeline.md`.
 2. Also read:
-   - `references/refactored/skills/shared/hep_domain_guardrails.md`
-   - `references/refactored/skills/shared/pipeline_logging_contract.md`
-   - `references/refactored/skills/shared/artifact_matrix.md`
+   - `../_hep-analysis-refactored/skills/shared/hep_domain_guardrails.md`
+   - `../_hep-analysis-refactored/skills/shared/pipeline_logging_contract.md`
+   - `../_hep-analysis-refactored/skills/shared/artifact_matrix.md`
 3. Load only the vendored pattern file needed for the current stage or blocker.
-4. Prefer the vendored refactored files under `references/refactored/skills/` over the legacy `.codex/skills/hep-meta-first/references/` contracts.
+4. Prefer the bundled refactored files under `../_hep-analysis-refactored/skills/` over the legacy `.codex/skills/hep-meta-first/references/` contracts.
 
 ## Use This Skill For
 

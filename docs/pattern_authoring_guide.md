@@ -2,7 +2,7 @@
 
 This repository uses five skill patterns. Every skill should have one dominant pattern even when it references other patterns.
 
-Export note: in this standalone skills repository, path examples like `skills/shared/...` refer to the vendored refactored tree under `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`.
+Export note: in this standalone skills repository, path examples like `skills/shared/...` refer to the bundled refactored tree under `.codex/skills/_hep-analysis-refactored/skills/`.
 
 ## Repository-wide rules
 

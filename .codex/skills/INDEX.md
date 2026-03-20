@@ -17,12 +17,12 @@ Session skill packages:
 
 Vendored refactored pattern tree:
 
-- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/`
+- `.codex/skills/_hep-analysis-refactored/skills/`
 
-Key vendored files:
+Key bundled reference files:
 
-- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/pipelines/hep_analysis_meta_pipeline.md`
-- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/inversions/analysis_router_inversion.md`
-- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/shared/hep_domain_guardrails.md`
-- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/shared/pipeline_logging_contract.md`
-- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/shared/artifact_matrix.md`
+- `.codex/skills/_hep-analysis-refactored/skills/pipelines/hep_analysis_meta_pipeline.md`
+- `.codex/skills/_hep-analysis-refactored/skills/inversions/analysis_router_inversion.md`
+- `.codex/skills/_hep-analysis-refactored/skills/shared/hep_domain_guardrails.md`
+- `.codex/skills/_hep-analysis-refactored/skills/shared/pipeline_logging_contract.md`
+- `.codex/skills/_hep-analysis-refactored/skills/shared/artifact_matrix.md`
