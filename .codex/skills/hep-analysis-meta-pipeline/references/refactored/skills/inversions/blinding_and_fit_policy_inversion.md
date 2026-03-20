@@ -51,5 +51,5 @@ Record:
 
 ## Related skills
 
-- `skills/reviewers/statistical_readiness_reviewer.md`
-- `skills/shared/hep_domain_guardrails.md`
+- `../reviewers/statistical_readiness_reviewer.md`
+- `../shared/hep_domain_guardrails.md`

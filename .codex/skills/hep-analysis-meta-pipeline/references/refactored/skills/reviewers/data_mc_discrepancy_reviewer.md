@@ -32,11 +32,11 @@ Check whether substantial disagreement between observed data and MC expectations
 
 ## Required remediation guidance
 
-- send implementation issues to `skills/inversions/failure_to_skill_inversion.md`
+- send implementation issues to `../inversions/failure_to_skill_inversion.md`
 - rerun the affected generator or wrapper with the smallest possible write scope
 - keep the discrepancy visible in the report even when unresolved
 
 ## Related skills
 
-- `skills/generators/report_package_generator.md`
-- `skills/reviewers/reproducibility_and_handoff_reviewer.md`
+- `../generators/report_package_generator.md`
+- `reproducibility_and_handoff_reviewer.md`

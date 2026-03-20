@@ -52,6 +52,6 @@ Use this wrapper when the agent needs a normalized analysis summary, schema vali
 
 ## Related skills
 
-- `skills/reviewers/analysis_summary_reviewer.md`
-- `skills/generators/analysis_spec_generator.md`
-- `skills/pipelines/spec_to_runtime_pipeline.md`
+- `../reviewers/analysis_summary_reviewer.md`
+- `../generators/analysis_spec_generator.md`
+- `../pipelines/spec_to_runtime_pipeline.md`

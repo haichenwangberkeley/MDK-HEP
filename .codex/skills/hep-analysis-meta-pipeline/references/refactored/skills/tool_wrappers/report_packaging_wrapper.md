@@ -53,6 +53,6 @@ Use this wrapper when the agent needs repository code to assemble plots, report 
 
 ## Related skills
 
-- `skills/generators/report_package_generator.md`
-- `skills/reviewers/blinding_and_visualization_reviewer.md`
-- `skills/pipelines/reporting_and_handoff_pipeline.md`
+- `../generators/report_package_generator.md`
+- `../reviewers/blinding_and_visualization_reviewer.md`
+- `../pipelines/reporting_and_handoff_pipeline.md`

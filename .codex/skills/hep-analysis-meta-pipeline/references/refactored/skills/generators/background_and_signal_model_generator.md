@@ -55,7 +55,7 @@ Create the strategy and model artifacts that define how backgrounds are constrai
 
 ## Related skills
 
-- `skills/inversions/sample_strategy_inversion.md`
-- `skills/inversions/blinding_and_fit_policy_inversion.md`
-- `skills/reviewers/statistical_readiness_reviewer.md`
-- `skills/reviewers/blinding_and_visualization_reviewer.md`
+- `../inversions/sample_strategy_inversion.md`
+- `../inversions/blinding_and_fit_policy_inversion.md`
+- `../reviewers/statistical_readiness_reviewer.md`
+- `../reviewers/blinding_and_visualization_reviewer.md`

@@ -24,8 +24,8 @@ Derived from:
 
 ## Dependencies
 
-- `skills/shared/evidence_requirements.md`
-- `skills/shared/pipeline_logging_contract.md`
+- `../shared/evidence_requirements.md`
+- `../shared/pipeline_logging_contract.md`
 
 ## Escalation paths
 
@@ -39,5 +39,5 @@ Derived from:
 
 ## Related skills
 
-- `skills/pipelines/hep_analysis_meta_pipeline.md`
-- `skills/reviewers/reproducibility_and_handoff_reviewer.md`
+- `hep_analysis_meta_pipeline.md`
+- `../reviewers/reproducibility_and_handoff_reviewer.md`

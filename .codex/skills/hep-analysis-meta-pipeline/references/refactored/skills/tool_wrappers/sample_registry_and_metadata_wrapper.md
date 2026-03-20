@@ -37,7 +37,7 @@ Use this wrapper when the agent needs to call repository code that inventories s
 ## Call procedure
 
 1. Use `.rootenv/bin/python -m analysis.samples.registry` for direct registry building when a targeted stage run is sufficient.
-2. Use `.rootenv/bin/python -m analysis.samples.metadata` or the integrated pipeline when metadata resolution and metadata-CSV updates are needed. Some legacy repo layouts still target `skills/metadata.csv`.
+2. Use `.rootenv/bin/python -m analysis.samples.metadata` or the integrated pipeline when metadata resolution and metadata-CSV updates are needed. In this vendored pack the reference metadata file is `../metadata.csv`; some legacy repo layouts still target `skills/metadata.csv`.
 3. Use `.rootenv/bin/python -m analysis.samples.strategy` after the registry exists if background strategy outputs are required immediately.
 
 ## Failure modes
@@ -54,6 +54,6 @@ Use this wrapper when the agent needs to call repository code that inventories s
 
 ## Related skills
 
-- `skills/generators/sample_semantics_generator.md`
-- `skills/reviewers/nominal_sample_and_normalization_reviewer.md`
-- `skills/inversions/sample_strategy_inversion.md`
+- `../generators/sample_semantics_generator.md`
+- `../reviewers/nominal_sample_and_normalization_reviewer.md`
+- `../inversions/sample_strategy_inversion.md`

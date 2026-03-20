@@ -40,11 +40,11 @@ Verify that templates, model choices, systematics, fit backend, and significance
 
 ## Required remediation guidance
 
-- resolve policy ambiguity through `skills/inversions/blinding_and_fit_policy_inversion.md`
-- regenerate model artifacts with `skills/generators/background_and_signal_model_generator.md`
-- rerun fit products through `skills/generators/systematics_and_workspace_generator.md`
+- resolve policy ambiguity through `../inversions/blinding_and_fit_policy_inversion.md`
+- regenerate model artifacts with `../generators/background_and_signal_model_generator.md`
+- rerun fit products through `../generators/systematics_and_workspace_generator.md`
 
 ## Related skills
 
-- `skills/shared/hep_domain_guardrails.md`
-- `skills/shared/evidence_requirements.md`
+- `../shared/hep_domain_guardrails.md`
+- `../shared/evidence_requirements.md`

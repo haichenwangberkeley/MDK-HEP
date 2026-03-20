@@ -36,11 +36,11 @@ Verify that sample identity, process role, nominal-versus-alternative status, an
 
 ## Required remediation guidance
 
-- use `skills/inversions/sample_strategy_inversion.md` to pick the correct branch
-- rerun `skills/generators/sample_semantics_generator.md` after the decision record is updated
+- use `../inversions/sample_strategy_inversion.md` to pick the correct branch
+- rerun `../generators/sample_semantics_generator.md` after the decision record is updated
 - escalate if repository facts and metadata cannot establish a unique central sample set
 
 ## Related skills
 
-- `skills/shared/open_data_dataset_facts.md`
-- `skills/shared/hep_domain_guardrails.md`
+- `../shared/open_data_dataset_facts.md`
+- `../shared/hep_domain_guardrails.md`

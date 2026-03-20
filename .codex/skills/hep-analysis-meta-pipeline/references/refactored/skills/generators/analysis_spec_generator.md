@@ -52,7 +52,7 @@ Create or refine the analysis specification so the validated summary, execution 
 
 ## Related skills
 
-- `skills/tool_wrappers/summary_loader_wrapper.md`
-- `skills/reviewers/preflight_fact_check_reviewer.md`
-- `skills/reviewers/analysis_summary_reviewer.md`
-- `skills/pipelines/spec_to_runtime_pipeline.md`
+- `../tool_wrappers/summary_loader_wrapper.md`
+- `../reviewers/preflight_fact_check_reviewer.md`
+- `../reviewers/analysis_summary_reviewer.md`
+- `../pipelines/spec_to_runtime_pipeline.md`

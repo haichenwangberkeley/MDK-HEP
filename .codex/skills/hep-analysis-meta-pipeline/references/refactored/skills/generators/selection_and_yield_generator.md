@@ -53,6 +53,6 @@ Produce the cut-flow, region-yield, and provenance artifacts that connect execut
 
 ## Related skills
 
-- `skills/tool_wrappers/selection_and_partition_wrapper.md`
-- `skills/reviewers/nominal_sample_and_normalization_reviewer.md`
-- `skills/generators/histogram_and_template_generator.md`
+- `../tool_wrappers/selection_and_partition_wrapper.md`
+- `../reviewers/nominal_sample_and_normalization_reviewer.md`
+- `histogram_and_template_generator.md`

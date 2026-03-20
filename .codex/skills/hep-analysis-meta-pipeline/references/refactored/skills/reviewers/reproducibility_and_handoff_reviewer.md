@@ -39,10 +39,10 @@ Verify that the run used the approved statistics scope, produced reproducibility
 ## Required remediation guidance
 
 - rerun the blocked stage through the central pipeline or the smallest matching wrapper
-- use `skills/inversions/failure_to_skill_inversion.md` to classify recurring failure modes
+- use `../inversions/failure_to_skill_inversion.md` to classify recurring failure modes
 - escalate to a human if central-result scope cannot be recovered without changing the approved run contract
 
 ## Related skills
 
-- `skills/pipelines/reporting_and_handoff_pipeline.md`
-- `skills/shared/pipeline_logging_contract.md`
+- `../pipelines/reporting_and_handoff_pipeline.md`
+- `../shared/pipeline_logging_contract.md`

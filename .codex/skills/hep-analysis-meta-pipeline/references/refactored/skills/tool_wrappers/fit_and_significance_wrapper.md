@@ -57,6 +57,6 @@ Use this wrapper when the agent needs to execute the repository fit, systematics
 
 ## Related skills
 
-- `skills/generators/systematics_and_workspace_generator.md`
-- `skills/reviewers/statistical_readiness_reviewer.md`
-- `skills/inversions/blinding_and_fit_policy_inversion.md`
+- `../generators/systematics_and_workspace_generator.md`
+- `../reviewers/statistical_readiness_reviewer.md`
+- `../inversions/blinding_and_fit_policy_inversion.md`

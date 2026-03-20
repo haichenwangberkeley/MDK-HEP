@@ -42,7 +42,7 @@ Use this inversion when the next action is unclear, when the workflow starts fro
 
 ## Output decision record
 
-Write a decision record using `skills/shared/decision_record_template.md` that names:
+Write a decision record using `../shared/decision_record_template.md` that names:
 
 - blocker
 - chosen next skill or pipeline
@@ -51,5 +51,5 @@ Write a decision record using `skills/shared/decision_record_template.md` that n
 
 ## Related skills
 
-- `skills/pipelines/hep_analysis_meta_pipeline.md`
-- `skills/shared/artifact_matrix.md`
+- `../pipelines/hep_analysis_meta_pipeline.md`
+- `../shared/artifact_matrix.md`

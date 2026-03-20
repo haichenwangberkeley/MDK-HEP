@@ -54,7 +54,7 @@ Generate the plot-rich, note-style report package that communicates the analysis
 
 ## Related skills
 
-- `skills/tool_wrappers/report_packaging_wrapper.md`
-- `skills/reviewers/blinding_and_visualization_reviewer.md`
-- `skills/reviewers/data_mc_discrepancy_reviewer.md`
-- `skills/pipelines/reporting_and_handoff_pipeline.md`
+- `../tool_wrappers/report_packaging_wrapper.md`
+- `../reviewers/blinding_and_visualization_reviewer.md`
+- `../reviewers/data_mc_discrepancy_reviewer.md`
+- `../pipelines/reporting_and_handoff_pipeline.md`

@@ -20,7 +20,7 @@ Generate the reviewed sample registry, normalization records, nominal-versus-alt
 
 - normalized summary
 - input sample inventory
-- metadata CSV artifact or equivalent metadata source, including legacy repo layouts that still use `skills/metadata.csv`
+- metadata CSV artifact or equivalent metadata source; in this vendored pack the file is `../metadata.csv`, while some legacy repo layouts used `skills/metadata.csv`
 - luminosity policy and sample-strategy decision record
 
 ## Outputs
@@ -53,6 +53,6 @@ Generate the reviewed sample registry, normalization records, nominal-versus-alt
 
 ## Related skills
 
-- `skills/tool_wrappers/sample_registry_and_metadata_wrapper.md`
-- `skills/reviewers/nominal_sample_and_normalization_reviewer.md`
-- `skills/inversions/sample_strategy_inversion.md`
+- `../tool_wrappers/sample_registry_and_metadata_wrapper.md`
+- `../reviewers/nominal_sample_and_normalization_reviewer.md`
+- `../inversions/sample_strategy_inversion.md`

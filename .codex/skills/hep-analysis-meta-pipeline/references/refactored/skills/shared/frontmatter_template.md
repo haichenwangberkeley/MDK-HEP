@@ -18,9 +18,9 @@ outputs:
   - outputs/samples.registry.json
   - outputs/normalization/norm_table.json
 reviewers:
-  - skills/reviewers/nominal_sample_and_normalization_reviewer.md
+  - ../reviewers/nominal_sample_and_normalization_reviewer.md
 requires:
-  - skills/pipelines/spec_to_runtime_pipeline.md
+  - ../pipelines/spec_to_runtime_pipeline.md
 escalation:
   - Human approval required for any central-result override to luminosity or blinding policy.
 ---

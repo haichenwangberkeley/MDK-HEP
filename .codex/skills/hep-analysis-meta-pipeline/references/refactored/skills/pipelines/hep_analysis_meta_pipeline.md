@@ -80,7 +80,7 @@ Derived from the source meta-skill and its reference library.
 
 ## Logging requirements
 
-Use `skills/shared/pipeline_logging_contract.md` for every stage. The minimum log bundle is:
+Use `../shared/pipeline_logging_contract.md` for every stage. The minimum log bundle is:
 
 - run manifest
 - execution contract
@@ -96,6 +96,6 @@ Use `skills/shared/pipeline_logging_contract.md` for every stage. The minimum lo
 
 ## Related skills
 
-- `skills/inversions/analysis_router_inversion.md`
-- `skills/shared/hep_domain_guardrails.md`
-- `skills/shared/artifact_matrix.md`
+- `../inversions/analysis_router_inversion.md`
+- `../shared/hep_domain_guardrails.md`
+- `../shared/artifact_matrix.md`

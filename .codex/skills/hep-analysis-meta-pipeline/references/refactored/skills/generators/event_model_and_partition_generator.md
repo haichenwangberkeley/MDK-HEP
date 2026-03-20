@@ -53,6 +53,6 @@ Turn the reviewed analysis summary into executable object, category, channel, an
 
 ## Related skills
 
-- `skills/tool_wrappers/selection_and_partition_wrapper.md`
-- `skills/reviewers/analysis_summary_reviewer.md`
-- `skills/pipelines/hep_analysis_meta_pipeline.md`
+- `../tool_wrappers/selection_and_partition_wrapper.md`
+- `../reviewers/analysis_summary_reviewer.md`
+- `../pipelines/hep_analysis_meta_pipeline.md`

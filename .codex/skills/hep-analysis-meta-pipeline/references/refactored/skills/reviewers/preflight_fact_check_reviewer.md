@@ -32,11 +32,11 @@ Verify that the analysis objective, inputs, runtime scope, and repository readin
 
 ## Required remediation guidance
 
-- route narrative ambiguity to `skills/generators/analysis_spec_generator.md`
-- route runtime issues to `skills/tool_wrappers/runtime_and_preflight_wrapper.md`
+- route narrative ambiguity to `../generators/analysis_spec_generator.md`
+- route runtime issues to `../tool_wrappers/runtime_and_preflight_wrapper.md`
 - escalate to a human when the missing fact cannot be reconstructed from repository artifacts
 
 ## Related skills
 
-- `skills/pipelines/spec_to_runtime_pipeline.md`
-- `skills/shared/review_rubric.md`
+- `../pipelines/spec_to_runtime_pipeline.md`
+- `../shared/review_rubric.md`

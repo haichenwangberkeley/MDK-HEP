@@ -46,5 +46,5 @@ Record:
 
 ## Related skills
 
-- `skills/reviewers/data_mc_discrepancy_reviewer.md`
-- `skills/reviewers/reproducibility_and_handoff_reviewer.md`
+- `../reviewers/data_mc_discrepancy_reviewer.md`
+- `../reviewers/reproducibility_and_handoff_reviewer.md`

@@ -44,5 +44,5 @@ Record:
 
 ## Related skills
 
-- `skills/generators/sample_semantics_generator.md`
-- `skills/reviewers/nominal_sample_and_normalization_reviewer.md`
+- `../generators/sample_semantics_generator.md`
+- `../reviewers/nominal_sample_and_normalization_reviewer.md`

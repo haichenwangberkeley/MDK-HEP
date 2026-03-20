@@ -33,11 +33,11 @@ Verify that the normalized analysis summary, partition semantics, and execution 
 
 ## Required remediation guidance
 
-- use `skills/tool_wrappers/summary_loader_wrapper.md` to regenerate normalized artifacts
-- use `skills/generators/analysis_spec_generator.md` for summary contract repair
-- use `skills/generators/event_model_and_partition_generator.md` when the summary is valid but partitions are incomplete
+- use `../tool_wrappers/summary_loader_wrapper.md` to regenerate normalized artifacts
+- use `../generators/analysis_spec_generator.md` for summary contract repair
+- use `../generators/event_model_and_partition_generator.md` when the summary is valid but partitions are incomplete
 
 ## Related skills
 
-- `skills/pipelines/spec_to_runtime_pipeline.md`
-- `skills/shared/hep_domain_guardrails.md`
+- `../pipelines/spec_to_runtime_pipeline.md`
+- `../shared/hep_domain_guardrails.md`

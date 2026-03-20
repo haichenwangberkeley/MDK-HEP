@@ -53,6 +53,6 @@ Use this wrapper when the agent needs repository code to build histograms, creat
 
 ## Related skills
 
-- `skills/generators/histogram_and_template_generator.md`
-- `skills/reviewers/statistical_readiness_reviewer.md`
-- `skills/shared/plotting_invariants.md`
+- `../generators/histogram_and_template_generator.md`
+- `../reviewers/statistical_readiness_reviewer.md`
+- `../shared/plotting_invariants.md`

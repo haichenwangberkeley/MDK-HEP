@@ -21,8 +21,8 @@ Vendored refactored pattern tree:
 
 Key vendored files:
 
-- `skills/pipelines/hep_analysis_meta_pipeline.md`
-- `skills/inversions/analysis_router_inversion.md`
-- `skills/shared/hep_domain_guardrails.md`
-- `skills/shared/pipeline_logging_contract.md`
-- `skills/shared/artifact_matrix.md`
+- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/pipelines/hep_analysis_meta_pipeline.md`
+- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/inversions/analysis_router_inversion.md`
+- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/shared/hep_domain_guardrails.md`
+- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/shared/pipeline_logging_contract.md`
+- `.codex/skills/hep-analysis-meta-pipeline/references/refactored/skills/shared/artifact_matrix.md`

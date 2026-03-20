@@ -34,11 +34,11 @@ Verify that blinding, plot content, plot captions, and visual diagnostics satisf
 
 ## Required remediation guidance
 
-- use `skills/inversions/blinding_and_fit_policy_inversion.md` to resolve policy ambiguity
-- rerun `skills/generators/background_and_signal_model_generator.md` or `skills/generators/report_package_generator.md` for missing artifacts
+- use `../inversions/blinding_and_fit_policy_inversion.md` to resolve policy ambiguity
+- rerun `../generators/background_and_signal_model_generator.md` or `../generators/report_package_generator.md` for missing artifacts
 - keep discrepancies visible; never remediate by hiding bins or relabeling plots cosmetically
 
 ## Related skills
 
-- `skills/shared/plotting_invariants.md`
-- `skills/generators/report_package_generator.md`
+- `../shared/plotting_invariants.md`
+- `../generators/report_package_generator.md`

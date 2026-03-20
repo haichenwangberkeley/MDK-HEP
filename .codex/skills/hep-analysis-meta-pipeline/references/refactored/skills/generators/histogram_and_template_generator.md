@@ -50,6 +50,6 @@ Generate the histogram and template artifacts that statistical and reporting sta
 
 ## Related skills
 
-- `skills/tool_wrappers/histogram_and_template_wrapper.md`
-- `skills/reviewers/statistical_readiness_reviewer.md`
-- `skills/shared/plotting_invariants.md`
+- `../tool_wrappers/histogram_and_template_wrapper.md`
+- `../reviewers/statistical_readiness_reviewer.md`
+- `../shared/plotting_invariants.md`

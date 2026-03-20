@@ -23,8 +23,8 @@ Derived from:
 
 ## Dependencies
 
-- `skills/shared/hep_domain_guardrails.md`
-- `skills/shared/pipeline_logging_contract.md`
+- `../shared/hep_domain_guardrails.md`
+- `../shared/pipeline_logging_contract.md`
 
 ## Escalation paths
 
@@ -38,5 +38,5 @@ Derived from:
 
 ## Related skills
 
-- `skills/pipelines/hep_analysis_meta_pipeline.md`
-- `skills/inversions/analysis_router_inversion.md`
+- `hep_analysis_meta_pipeline.md`
+- `../inversions/analysis_router_inversion.md`

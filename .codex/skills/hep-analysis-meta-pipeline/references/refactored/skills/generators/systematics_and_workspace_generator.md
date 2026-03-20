@@ -55,6 +55,6 @@ Generate nuisance, workspace, fit, and significance artifacts after the policy d
 
 ## Related skills
 
-- `skills/tool_wrappers/fit_and_significance_wrapper.md`
-- `skills/reviewers/statistical_readiness_reviewer.md`
-- `skills/inversions/blinding_and_fit_policy_inversion.md`
+- `../tool_wrappers/fit_and_significance_wrapper.md`
+- `../reviewers/statistical_readiness_reviewer.md`
+- `../inversions/blinding_and_fit_policy_inversion.md`

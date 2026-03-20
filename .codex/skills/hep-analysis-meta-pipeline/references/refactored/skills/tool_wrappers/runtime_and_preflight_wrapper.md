@@ -58,6 +58,6 @@ Use this wrapper when the agent needs to verify that the repository can execute 
 
 ## Related skills
 
-- `skills/reviewers/preflight_fact_check_reviewer.md`
-- `skills/reviewers/reproducibility_and_handoff_reviewer.md`
-- `skills/pipelines/hep_analysis_meta_pipeline.md`
+- `../reviewers/preflight_fact_check_reviewer.md`
+- `../reviewers/reproducibility_and_handoff_reviewer.md`
+- `../pipelines/hep_analysis_meta_pipeline.md`

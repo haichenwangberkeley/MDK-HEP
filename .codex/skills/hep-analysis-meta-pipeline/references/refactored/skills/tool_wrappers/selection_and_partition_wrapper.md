@@ -55,6 +55,6 @@ Use this wrapper when the agent needs to materialize region partitions, process 
 
 ## Related skills
 
-- `skills/generators/event_model_and_partition_generator.md`
-- `skills/generators/selection_and_yield_generator.md`
-- `skills/reviewers/analysis_summary_reviewer.md`
+- `../generators/event_model_and_partition_generator.md`
+- `../generators/selection_and_yield_generator.md`
+- `../reviewers/analysis_summary_reviewer.md`

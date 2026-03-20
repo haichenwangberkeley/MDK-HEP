@@ -10,6 +10,8 @@ Unless otherwise noted, path examples like `skills/pipelines/hep_analysis_meta_p
 .codex/skills/hep-analysis-meta-pipeline/references/refactored/
 ```
 
+Inside the vendored pattern files themselves, related-skill references are written relative to the current file so they resolve correctly even without a top-level repo `skills/` directory.
+
 ## Architecture
 
 The pattern folders are:
