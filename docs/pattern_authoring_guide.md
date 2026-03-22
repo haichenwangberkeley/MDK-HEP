@@ -2,7 +2,7 @@
 
 This repository uses five skill patterns. Every skill should have one dominant pattern even when it references other patterns.
 
-Export note: in this standalone skills repository, path examples like `skills/shared/...` refer to the bundled refactored tree under `.codex/skills/_hep-analysis-refactored/skills/`.
+Export note: in this standalone skills repository, authoring paths live under `skill_src/patterns/`. Generated runtime copies of those files live under `.codex/skills/<skill>/references/patterns/`.
 
 ## Repository-wide rules
 

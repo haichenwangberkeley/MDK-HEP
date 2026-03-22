@@ -4,10 +4,13 @@ This repository packages the HEP analysis skills from the `GCT-hep-meta` workspa
 
 ## What is included
 
-- `.codex/skills/`: session-ready Codex skill folders plus vendored refactored references
+- `skill_src/`: human-maintained source for refactored pattern files and runtime skill templates
+- `scripts/build_runtime_skills.py`: rebuilds the runtime pack from `skill_src/`
+- `.codex/skills/`: generated session-ready Codex skill folders
 - `.codex/skills/INDEX.md`: quick navigation for the exported session pack
 - `docs/`: audit, migration, and authoring documentation for the skill system
 - `README_skills.md`: architecture overview for the refactored pattern system
+- `docs/runtime_skill_build.md`: explains the source/build/runtime packaging model
 
 The current pack includes an explicit data and MC sample-semantics subsystem that separates:
 
@@ -40,24 +43,34 @@ Use $hep-analysis-meta-pipeline for this task.
 
 `hep-meta-first` is retained as a legacy skill pack for comparison and migration history.
 
-## Where the refactored pattern files live
+## Source, build, and runtime
 
-The session skills under `.codex/skills` are the triggerable Codex skill packages.
-The refactored Tool Wrapper, Generator, Reviewer, Inversion, Pipeline, and shared reference files are bundled under a shared non-skill directory:
+This repository now uses a three-layer model:
 
-```text
-.codex/skills/_hep-analysis-refactored/skills/
+- Humans edit `skill_src/`.
+- `scripts/build_runtime_skills.py` packages the runtime skill folders.
+- Agents use the generated `.codex/skills/` folders.
+
+For the refactored runtime skills, each generated skill folder bundles its own local pattern references under `references/patterns/`, so the live skill no longer depends on a sibling `_hep-analysis-refactored` directory.
+
+## Build
+
+Rebuild the runtime pack with:
+
+```bash
+python scripts/build_runtime_skills.py
 ```
 
-This keeps the exported repo self-contained without making one skill depend on another skill's private `references/` directory. The shared reference pack also includes `metadata.csv`.
+The build step refreshes `.codex/skills/`, regenerates `.codex/skills/INDEX.md`, removes the old shared `_hep-analysis-refactored` runtime folder, and validates the generated references.
 
 ## Intended workflow
 
-1. Trigger `$hep-analysis-meta-pipeline` or one of the pattern-specific sibling skills.
-2. Use `.codex/skills/_hep-analysis-refactored/skills/pipelines/sample_and_template_semantics_pipeline.md` when the task hinges on data or MC sample roles, nominality, normalization, or data-driven templates.
-3. Maintain the bundled pattern files under `.codex/skills/_hep-analysis-refactored/skills/`.
-4. Keep the historical audit and migration docs under `docs/`.
-5. Version and publish this directory without the analysis code or outputs.
+1. Edit `skill_src/patterns/` when changing shared refactored pattern content.
+2. Edit `skill_src/runtime_templates/` when changing runtime `SKILL.md`, `agents/openai.yaml`, or preserved legacy runtime folders.
+3. Run `python scripts/build_runtime_skills.py`.
+4. Trigger `$hep-analysis-meta-pipeline` or one of the pattern-specific sibling skills from the generated `.codex/skills/` pack.
+5. Keep the historical audit and migration docs under `docs/`.
+6. Version and publish this directory without the analysis code or outputs.
 
 ## Local git notes
 

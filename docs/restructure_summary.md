@@ -1,6 +1,6 @@
 # Restructure Summary
 
-Export note: in this standalone skills repository, the refactored pattern tree is bundled under `.codex/skills/_hep-analysis-refactored/skills/`. Path examples written as `skills/...` refer to that bundled tree rather than to a required top-level repo directory.
+Export note: in this standalone skills repository, the human-maintained refactored pattern tree lives under `skill_src/patterns/`, and generated runtime copies live under `.codex/skills/<skill>/references/patterns/`. Path examples written as `skills/...` refer to the refactored pattern tree concept rather than to a required top-level repo directory.
 
 ## What changed
 

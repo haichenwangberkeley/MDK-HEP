@@ -1,10 +1,12 @@
 # Codex Skills Index
 
+This runtime pack is generated from `skill_src/` by `scripts/build_runtime_skills.py`.
+
 Canonical entry:
 
 - `$hep-analysis-meta-pipeline`
 
-Session skill packages:
+Generated runtime skill packages:
 
 - `hep-analysis-meta-pipeline`: main HEP orchestration entrypoint
 - `hep-analysis-pipelines`: pipeline-focused entry skill
@@ -15,17 +17,9 @@ Session skill packages:
 - `hep-analysis-env-setup`: runtime environment setup helper
 - `hep-meta-first`: preserved legacy single-entry pack
 
-Vendored refactored pattern tree:
+Refactored runtime skills are self-contained.
+Each one bundles its local pattern references under:
 
-- `.codex/skills/_hep-analysis-refactored/skills/`
+- `references/patterns/`
 
-Key bundled reference files:
-
-- `.codex/skills/_hep-analysis-refactored/skills/pipelines/hep_analysis_meta_pipeline.md`
-- `.codex/skills/_hep-analysis-refactored/skills/pipelines/sample_and_template_semantics_pipeline.md`
-- `.codex/skills/_hep-analysis-refactored/skills/inversions/analysis_router_inversion.md`
-- `.codex/skills/_hep-analysis-refactored/skills/inversions/signal_signature_and_likelihood_intake_inversion.md`
-- `.codex/skills/_hep-analysis-refactored/skills/shared/hep_domain_guardrails.md`
-- `.codex/skills/_hep-analysis-refactored/skills/shared/pipeline_logging_contract.md`
-- `.codex/skills/_hep-analysis-refactored/skills/shared/artifact_matrix.md`
-- `.codex/skills/_hep-analysis-refactored/skills/shared/likelihood_sample_contract_schema.md`
+The legacy `hep-meta-first` pack is preserved for comparison and migration history.
