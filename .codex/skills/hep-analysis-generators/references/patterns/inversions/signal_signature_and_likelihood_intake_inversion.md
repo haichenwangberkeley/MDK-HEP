@@ -64,6 +64,42 @@ Record:
 - nominal-versus-alternative authority
 - blocked assumptions that still require human input
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. A decision record exists before the inversion hands off, and it records the analysis target, reconstructed signal signature, region map with likelihood roles, allowed data-template sources and blocked template uses, nominal-versus-alternative authority, and blocked assumptions requiring human input.
+2. The decision record explicitly confirms that sample relevance classification has not started before the physics target and reconstructed signal signature were made explicit.
+3. The decision record explicitly confirms that no data sample will be treated as a template or transfer-factor source unless that use was approved in the intake decision.
+
+### REPAIR
+
+- Soft failure: rerun `signal_signature_and_likelihood_intake_inversion.md` to complete the missing target, signature, region-role, or template-policy fields and rerun this gate.
+- Hard failure: return to Stage 1 of `sample_and_template_semantics_pipeline.md`; if incompatible signal signatures remain plausible or the authority for nominal-versus-alternative MC choice is still unclear, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: signal_signature_and_likelihood_intake_inversion
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `sample_strategy_inversion.md`

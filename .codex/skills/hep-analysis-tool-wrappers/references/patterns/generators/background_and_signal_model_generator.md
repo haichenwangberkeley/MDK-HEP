@@ -59,6 +59,45 @@ Create the strategy and model artifacts that define how backgrounds are constrai
 - no data-driven template without a reviewed template contract
 - if model choice remains ambiguous, block and escalate through the inversion or reviewer path
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The `background modeling strategy`, `CR and SR constraint map`, `background input-role summary`, `blinding summary`, `signal PDF artifact`, `background scan and chosen model artifacts`, and `spurious-signal artifact` all exist before the modeling stage hands off.
+2. Every background input named in the `background modeling strategy` declares whether it is `MC-driven`, `data-driven`, or `hybrid`, and it declares a normalization mode rather than leaving normalization implicit.
+3. If the analysis is blinded, the `blinding summary` confirms that `120-130 GeV` is not exposed in blinded mode; if fit or significance products are prepared, the model artifacts record the full `105-160 GeV` fit range.
+4. If an H to gammagamma background template is central, the `background input-role summary` names an explicit nominal diphoton sample, and any data-driven input listed there points to a reviewed `data-driven template contract` rather than silently reusing observed data.
+
+### REPAIR
+
+- Soft failure: rerun `background_and_signal_model_generator.md` after refreshing the missing model artifact, `blinding summary`, or source-class declaration, then rerun this gate.
+- Hard failure: return to Stage 6 of `hep_analysis_meta_pipeline.md`, routing through `data_driven_template_generator.md`, `sample_strategy_inversion.md`, or `blinding_and_fit_policy_inversion.md` as needed; escalate to `statistical_readiness_reviewer.md` or a human if the nominal model choice remains ambiguous.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: background_and_signal_model_generator
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+  - assertion_4
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+  assertion_4: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../inversions/sample_strategy_inversion.md`

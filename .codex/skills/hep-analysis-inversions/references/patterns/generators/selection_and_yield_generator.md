@@ -51,6 +51,42 @@ Produce the cut-flow, region-yield, and provenance artifacts that connect execut
 - merged process rows require an explicit merge map
 - alternative samples do not enter central totals unless the decision record says so
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The `cut-flow tables`, `region-yield tables`, `process-aggregated views`, `sample-resolved views`, and `cut-flow provenance` all exist before histogramming or reporting consumes the yields.
+2. The `cut-flow tables` preserve step ordering and show that unweighted event counts do not increase across stricter sequential cuts unless an explicit branch reset is documented in the provenance.
+3. The `process-aggregated views` can be traced back to the `sample-resolved views`, and alternative samples are excluded from central totals unless the decision record explicitly promotes them.
+
+### REPAIR
+
+- Soft failure: rerun `selection_and_yield_generator.md` to regenerate the missing cut-flow, yield, or provenance artifacts and rerun the gate.
+- Hard failure: return to Stage 4 of `hep_analysis_meta_pipeline.md`; if central totals depend on unresolved nominal-sample ambiguity or non-executable region logic, roll back through `selection_and_partition_wrapper.md` or `sample_semantics_generator.md` and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: selection_and_yield_generator
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../tool_wrappers/selection_and_partition_wrapper.md`

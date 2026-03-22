@@ -51,6 +51,42 @@ Use this wrapper when the agent needs repository code to build histograms, creat
 - statistical bookkeeping such as weighted yields or `sumw2` is preserved
 - smoothing and effective-luminosity reviewers receive the same template set that the fits will consume
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The wrapper outputs exist before handoff: `histogram products under outputs/hists/`, `cache artifacts under outputs/cache/` when reuse is requested, and `freeze or manifest metadata` when histogram products are intentionally reused.
+2. The produced template manifest explicitly records whether histograms were built fresh, loaded from cache, or frozen, and the statistical bookkeeping such as weighted yields or `sumw2` is preserved.
+3. The wrapper output remains aligned with the reviewed nominal sample set and does not silently introduce smoothing or a different template set than the one statistical reviewers will inspect.
+
+### REPAIR
+
+- Soft failure: rerun `histogram_and_template_wrapper.md` to regenerate the missing histogram products, cache metadata, or manifest and rerun this gate.
+- Hard failure: return to Stage 6 of `hep_analysis_meta_pipeline.md`; if the template set no longer matches the reviewed nominal samples, roll back through `histogram_and_template_generator.md` or `sample_semantics_generator.md`, and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: histogram_and_template_wrapper
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../generators/histogram_and_template_generator.md`

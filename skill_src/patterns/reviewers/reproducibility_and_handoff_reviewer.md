@@ -42,6 +42,42 @@ Verify that the run used the approved statistics scope, produced reproducibility
 - use `../inversions/failure_to_skill_inversion.md` to classify recurring failure modes
 - escalate to a human if central-result scope cannot be recovered without changing the approved run contract
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. A reviewer verdict artifact or conversation note for `Reproducibility and Handoff Reviewer` exists and records exactly one verdict from `pass`, `conditional_pass`, `block`, or `fail`.
+2. The required evidence is present on disk or in the conversation: the run manifest, smoke or reproducibility artifacts, skill refresh or checkpoint logs, the enforcement handoff gate, the final report package, and the skill extraction summary.
+3. The evidence explicitly confirms that the enforcement handoff gate is passing and that no partial-statistics run is being presented as a final central result.
+
+### REPAIR
+
+- Soft failure: rerun the blocked reporting or reproducibility stage to regenerate the missing handoff evidence, then rerun this reviewer gate.
+- Hard failure: return to the `Handoff enforcement` or `Failure extraction` stage of `reporting_and_handoff_pipeline.md`, or return to Stage 10 of `hep_analysis_meta_pipeline.md`; if central-result scope cannot be recovered from the approved run contract, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: reproducibility_and_handoff_reviewer
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../pipelines/reporting_and_handoff_pipeline.md`

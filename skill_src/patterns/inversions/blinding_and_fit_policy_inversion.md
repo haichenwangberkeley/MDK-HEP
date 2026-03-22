@@ -49,6 +49,42 @@ Record:
 - smoothing and effective-luminosity disposition
 - blocking reasons
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. A decision record exists before the inversion hands off, and it records the blinding state, allowed significance modes, allowed backend role, and the smoothing and effective-luminosity disposition.
+2. If the run is blinded, the decision record explicitly confirms that `120-130 GeV` will not be exposed; if observed significance is allowed, the required human unblinding approval is recorded explicitly.
+3. For central H to gammagamma claims, the decision record confirms `pyroot_roofit` as the allowed primary backend; if expected significance is allowed, it records `mu_gen = 1`, the signal-plus-background hypothesis, and the full `105-160 GeV` range.
+
+### REPAIR
+
+- Soft failure: rerun `blinding_and_fit_policy_inversion.md` to rewrite the decision record with the missing blinding, backend, smoothing, or significance policy evidence, then rerun this gate.
+- Hard failure: return to Stage 6 of `hep_analysis_meta_pipeline.md` for blinding or modeling policy repair, or return to Stage 7 of `hep_analysis_meta_pipeline.md` for fit and significance policy repair; if required approvals are missing, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: blinding_and_fit_policy_inversion
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../reviewers/statistical_readiness_reviewer.md`

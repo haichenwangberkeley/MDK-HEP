@@ -50,6 +50,42 @@ Record:
 - data-template sources and blocked template uses
 - blocking ambiguities
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. A decision record exists before the inversion hands off, and it records the analysis target, reconstructed signal signature, relevant processes by class, selected nominal samples by process, alternative samples by process, normalization modes, data-template sources, and blocking ambiguities.
+2. The evidence supporting process relevance includes the signal-signature and likelihood-intake decision record, the sample registry draft, metadata resolution output, open-data dataset facts, and the reviewed summary or partition artifacts.
+3. If an H to gammagamma background template is central, the decision record names an explicit nominal diphoton sample, and if multiple plausible nominal MC samples remain, the record marks the branch as blocked pending approved analysis input or human triage.
+
+### REPAIR
+
+- Soft failure: rerun `sample_strategy_inversion.md` after collecting the missing registry, metadata, or signature evidence and rewrite the decision record before rerunning this gate.
+- Hard failure: return to Stage 3 of `sample_and_template_semantics_pipeline.md`; if relevance, nominality, or normalization intent cannot be supported from repository evidence, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: sample_strategy_inversion
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `signal_signature_and_likelihood_intake_inversion.md`

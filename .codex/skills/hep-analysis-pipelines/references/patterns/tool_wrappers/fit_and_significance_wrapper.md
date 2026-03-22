@@ -55,6 +55,42 @@ Use this wrapper when the agent needs to execute the repository fit, systematics
 - significance provenance names the dataset type and generation hypothesis
 - reviewer evidence distinguishes expected and observed significance
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The wrapper outputs exist before handoff: `fit outputs under outputs/fit/<FIT_ID>/`, `significance outputs under outputs/fit/<FIT_ID>/`, and the `systematics outputs consumed by the final report`.
+2. The fit provenance in `outputs/fit/<FIT_ID>/` names the backend explicitly, and any cross-check result is labeled as a cross-check rather than silently promoted.
+3. The significance provenance names the dataset type and generation hypothesis; for a central H to gammagamma result the backend is `pyroot_roofit`, and if expected significance is present the provenance records `mu_gen = 1` and the full `105-160 GeV` range.
+
+### REPAIR
+
+- Soft failure: rerun `fit_and_significance_wrapper.md` with the corrected backend, provenance, or output target and rerun this gate.
+- Hard failure: return to Stage 7 of `hep_analysis_meta_pipeline.md`; if backend eligibility or significance policy is still unresolved, route through `blinding_and_fit_policy_inversion.md` or `statistical_readiness_reviewer.md`, and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: fit_and_significance_wrapper
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../generators/systematics_and_workspace_generator.md`

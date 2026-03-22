@@ -43,6 +43,45 @@ Verify that every data or MC sample used by the analysis has an explicit role in
 - rerun `../generators/sample_semantics_generator.md` to regenerate the sample contracts
 - rerun `../generators/data_driven_template_generator.md` when a template-source contract is incomplete or missing
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. A reviewer verdict artifact or conversation note for `Likelihood Sample Role Reviewer` exists and records exactly one verdict from `pass`, `conditional_pass`, `block`, or `fail`.
+2. The required evidence is present on disk or in the conversation: the signal-signature and likelihood-intake decision record, the sample contract set, the nominal sample selection record, data-driven template contracts when used, the region map and event-overlap policy, and the closure or weak-correlation rationale when data-driven templates are used.
+3. The evidence explicitly confirms that every central or reviewer-visible sample has a `likelihood role`, `physics role`, `nominality`, and `normalization mode`, and that the same events are not used as both `observed_data` and `template_source` without a disjoint-event declaration.
+4. Any data-driven template listed in the evidence includes closure or decorrelation rationale rather than assuming that the template is valid.
+
+### REPAIR
+
+- Soft failure: rerun `sample_semantics_generator.md` or `data_driven_template_generator.md` to repair the missing role contract, overlap policy, or closure rationale, then rerun this reviewer gate.
+- Hard failure: return to Stage 5 of `sample_and_template_semantics_pipeline.md`; if likelihood roles remain ambiguous or a central sample would be silently promoted, route through `signal_signature_and_likelihood_intake_inversion.md`, `sample_strategy_inversion.md`, or escalate to a human, and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: likelihood_sample_role_reviewer
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+  - assertion_4
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+  assertion_4: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../shared/likelihood_sample_contract_schema.md`

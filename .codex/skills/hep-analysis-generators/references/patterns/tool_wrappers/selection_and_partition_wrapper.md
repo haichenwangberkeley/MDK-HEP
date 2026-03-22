@@ -53,6 +53,42 @@ Use this wrapper when the agent needs to materialize region partitions, process 
 - overlap checks are explicit
 - downstream cut-flow and template generators consume the same region definitions
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The wrapper outputs exist before handoff: `partition specs under outputs/partition/`, `per-sample selection or region artifacts`, and the `region yield and overlap evidence` consumed downstream.
+2. The partition and selection artifacts use executable region logic that stays aligned with the normalized summary rather than drifting into prose-only semantics.
+3. The overlap evidence is explicit, and the downstream cut-flow and template generators are pointed at the same region definitions rather than a silently different partition set.
+
+### REPAIR
+
+- Soft failure: rerun `selection_and_partition_wrapper.md` to regenerate the missing partition, selection, or overlap outputs and rerun this gate.
+- Hard failure: return to Stage 3 of `hep_analysis_meta_pipeline.md`; if region logic remains non-executable or overlap cannot be resolved, route through `event_model_and_partition_generator.md` or `analysis_summary_reviewer.md`, and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: selection_and_partition_wrapper
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../generators/event_model_and_partition_generator.md`

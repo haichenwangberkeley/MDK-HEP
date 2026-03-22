@@ -50,6 +50,42 @@ Use this wrapper when the agent needs a normalized analysis summary, schema vali
 - diagnostics are empty or explicitly blocking
 - reviewer findings cite the normalized summary rather than the raw narrative prompt
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The wrapper outputs exist before handoff: `outputs/summary.normalized.json`, `outputs/validation/inventory.json`, `outputs/validation/diagnostics.json`, and `outputs/validation/overlap_policy.json`.
+2. The `outputs/validation/diagnostics.json` artifact is either empty of blocking issues or explicitly records blocking issues; normalization and schema errors are surfaced rather than repaired silently.
+3. Downstream stages are using `outputs/summary.normalized.json` as the authoritative summary structure instead of falling back to raw narrative text or an unnormalized summary file.
+
+### REPAIR
+
+- Soft failure: rerun `summary_loader_wrapper.md` or `analysis_spec_generator.md` to regenerate the normalized summary and validation artifacts and rerun this gate.
+- Hard failure: return to Stage 3 of `spec_to_runtime_pipeline.md`; if the summary cannot be normalized without inventing missing physics fields, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: summary_loader_wrapper
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../reviewers/analysis_summary_reviewer.md`

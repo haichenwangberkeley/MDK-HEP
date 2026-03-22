@@ -45,6 +45,45 @@ Verify that sample identity, nominal-versus-alternative status, and normalizatio
 - run `likelihood_sample_role_reviewer.md` when data, template, or validation roles remain mixed
 - escalate if repository facts and metadata cannot establish a unique central sample set
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. A reviewer verdict artifact or conversation note for `Nominal Sample and Normalization Reviewer` exists and records exactly one verdict from `pass`, `conditional_pass`, `block`, or `fail`.
+2. The required evidence is present on disk or in the conversation: the signal-signature and likelihood-intake decision record, the sample registry, the sample contract set, the nominal sample selection record, the normalization table, the metadata resolution log, and the sample-strategy decision record when ambiguity existed.
+3. The evidence explicitly confirms that `36.1 fb^-1` is the central luminosity and that `36.0 fb^-1` does not appear as the central luminosity for the reviewed run.
+4. The normalization evidence explicitly confirms `cross section x k-factor x filter efficiency x signed generator-weight sum`, and raw event counts are not treated as the central normalization basis.
+
+### REPAIR
+
+- Soft failure: rerun `sample_semantics_generator.md` or `sample_registry_and_metadata_wrapper.md` to repair the missing nominal mapping, normalization table, or metadata log, then rerun this reviewer gate.
+- Hard failure: return to Stage 4 of `sample_and_template_semantics_pipeline.md`; if multiple nominal candidates remain or the normalization inputs are still incomplete, route through `sample_strategy_inversion.md` or escalate to a human, and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: nominal_sample_and_normalization_reviewer
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+  - assertion_4
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+  assertion_4: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `likelihood_sample_role_reviewer.md`

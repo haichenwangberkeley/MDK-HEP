@@ -49,6 +49,42 @@ Write a decision record using `../shared/decision_record_template.md` that names
 - rejected alternatives
 - required reviewer before advancement
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. A decision record exists using `../shared/decision_record_template.md` before the router hands off to the next skill.
+2. The decision record names the blocker, the chosen next skill or pipeline, the rejected alternatives, and the required reviewer before advancement.
+3. The evidence supporting the branch includes the normalized summary or explicit gap report, the current outputs inventory, reviewer findings or blocking artifact, and any prior decision record that constrains the branch.
+
+### REPAIR
+
+- Soft failure: rerun `analysis_router_inversion.md` with the missing blocker evidence and rewrite the decision record before rerunning this gate.
+- Hard failure: return to the last completed stage in `hep_analysis_meta_pipeline.md` that produced the blocker; if the router would have to choose a branch without evidence or would skip a mandatory reviewer, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: analysis_router_inversion
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../pipelines/hep_analysis_meta_pipeline.md`

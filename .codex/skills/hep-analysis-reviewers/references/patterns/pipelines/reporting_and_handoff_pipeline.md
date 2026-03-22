@@ -37,6 +37,42 @@ Derived from:
 - log report paths, plot manifest paths, discrepancy verdicts, and final handoff status
 - attach candidate-skill notes when repeated failures were observed
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The `Plot and report assembly` stage produced the report draft, plot manifest, and caption evidence before the pipeline advanced to discrepancy review.
+2. The `Discrepancy audit` stage produced an explicit discrepancy artifact even for a zero-issue run, and the `Handoff enforcement` stage recorded an enforcement handoff gate result of `ok` before handoff.
+3. The `Failure extraction` stage added remediation notes or explicit candidate-skill notes to the handoff package before the pipeline marked handoff complete, and each completed stage was backed by a `pass` or `conditional_pass` reviewer outcome.
+
+### REPAIR
+
+- Soft failure: rerun the blocked reporting stage in place to regenerate the missing report, discrepancy, enforcement, or failure-extraction artifact, then rerun this gate.
+- Hard failure: return to the earliest blocked stage in the `## Stage ordering` table of `reporting_and_handoff_pipeline.md`; if the handoff package would need to hide a blocker to appear complete, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: reporting_and_handoff_pipeline
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `hep_analysis_meta_pipeline.md`

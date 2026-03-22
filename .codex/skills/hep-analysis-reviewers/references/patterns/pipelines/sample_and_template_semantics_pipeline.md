@@ -35,6 +35,45 @@ Derived from the sample-handling and background-strategy contracts in the source
 - escalate when a data-driven template depends on an unsupported decorrelation assumption
 - escalate when the same data sample would need to appear on both sides of the likelihood without a defensible disjoint-event policy
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The pipeline log contains the `intake decision record`, `sample-strategy decision record`, `sample contract artifact inventory`, reviewer outcomes, and `template overlap and closure notes` whenever data-driven templates are used.
+2. The pipeline did not advance past Stage 4 until `nominal_sample_and_normalization_reviewer.md` returned `pass` or `conditional_pass`, and it did not advance past Stage 5 until `likelihood_sample_role_reviewer.md` returned `pass` or `conditional_pass`.
+3. The Stage 4 and Stage 5 artifacts explicitly preserve `36.1 fb^-1` as the central luminosity and preserve `cross section x k-factor x filter efficiency x signed generator-weight sum` as the central normalization basis rather than raw event counts.
+4. The modeling handoff is blocked unless the artifacts explicitly distinguish observed data from data-driven template sources.
+
+### REPAIR
+
+- Soft failure: rerun the blocked stage in this pipeline to regenerate the missing decision record, contract set, reviewer outcome, or overlap note, then rerun this gate.
+- Hard failure: return to the earliest blocked stage in the `## Stage plan` table of `sample_and_template_semantics_pipeline.md`; if nominality, normalization, or data-template separation still requires human triage, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: sample_and_template_semantics_pipeline
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+  - assertion_4
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+  assertion_4: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `hep_analysis_meta_pipeline.md`

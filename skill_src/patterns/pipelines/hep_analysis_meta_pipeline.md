@@ -96,6 +96,45 @@ Use `../shared/pipeline_logging_contract.md` for every stage. The minimum log bu
 - escalate when central sample semantics cannot be resolved from repository evidence
 - escalate when a reviewer would have to infer compliance from missing artifacts
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. For every completed stage in the `## Stage plan`, the pipeline log contains the mandatory artifacts, assumptions, deviations, unresolved issues, produced-artifact list, and next handoff target required by `../shared/pipeline_logging_contract.md`.
+2. No stage is marked complete unless its mandatory reviewer returned `pass` or `conditional_pass`; a `block` or `fail` verdict is not bypassed anywhere in the stage log.
+3. Stage 2 and Stage 6 artifacts explicitly preserve reviewer-approved sample roles, template provenance, and blinding behavior, including the rule that `120-130 GeV` is not exposed in blinded mode.
+4. Stage 7 statistical artifacts explicitly preserve `pyroot_roofit` as the central H to gammagamma backend, and any expected significance path records `mu_gen = 1`, the signal-plus-background hypothesis, and the full `105-160 GeV` range.
+
+### REPAIR
+
+- Soft failure: repair the missing stage artifact or reviewer evidence in place at the blocked stage, rerun that stage, and then rerun this gate from the pipeline log.
+- Hard failure: return to the earliest blocked stage in the `## Stage plan` table of `hep_analysis_meta_pipeline.md`; if a central-result policy would still be violated or a reviewer would need to infer compliance from missing artifacts, escalate to a human and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: hep_analysis_meta_pipeline
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+  - assertion_4
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+  assertion_4: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../inversions/analysis_router_inversion.md`

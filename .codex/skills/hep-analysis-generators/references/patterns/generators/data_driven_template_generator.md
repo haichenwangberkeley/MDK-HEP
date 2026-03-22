@@ -58,6 +58,45 @@ Generate the explicit contract for any template, transfer factor, or auxiliary P
 - no template contract without an explicit source event definition
 - no hidden assumption that a classifier shape or transfer factor is uncorrelated with the inverted object selection
 
+## Verification Gate
+
+### ASSERTIONS
+
+1. The `data-driven template contract`, `source event definition`, `target use declaration`, `normalization or relation mode`, `event-overlap policy`, and `closure or validation plan` all exist before any downstream modeling step reads the template.
+2. The `data-driven template contract` explicitly names the source region, target use, modeled observable or relation, and the normalization mode as `shape-only`, `sideband-normalized`, `CR-constrained`, or `auxiliary-only` rather than leaving those choices implicit.
+3. The `event-overlap policy` proves the source events are disjoint from observed-data likelihood terms or explicitly blocks the template, and the `closure or validation plan` states the weak-correlation or decorrelation rationale in reviewer-visible form.
+4. If blinded mode is active, the generated template inputs do not reuse observed signal-region data from the `120-130 GeV` window as if they were ordinary template source events.
+
+### REPAIR
+
+- Soft failure: rerun `data_driven_template_generator.md` to regenerate the missing contract, overlap policy, or closure plan and rerun the gate.
+- Hard failure: return to Stage 5 of `sample_and_template_semantics_pipeline.md`; if the source region, overlap policy, or decorrelation rationale cannot be defended, escalate through `likelihood_sample_role_reviewer.md` or to a human, and do not proceed.
+- If `gate_outcome` is `BLOCKED` or `ESCALATED`, do not proceed.
+
+### HANDOFF RECORD
+
+Emit this log entry before proceeding:
+
+```yaml
+stage_id: data_driven_template_generator
+assertions_checked:
+  - assertion_1
+  - assertion_2
+  - assertion_3
+  - assertion_4
+assertion_results:
+  assertion_1: pass|fail
+  assertion_2: pass|fail
+  assertion_3: pass|fail
+  assertion_4: pass|fail
+violations_found: <integer>
+repair_applied: true|false  # with one-line description if true
+gate_outcome: PASS | CONDITIONAL_PASS | BLOCKED | ESCALATED
+next_skill: <skill filename or "human">
+```
+
+The agent must not proceed if `gate_outcome` is `BLOCKED` or `ESCALATED`.
+
 ## Related skills
 
 - `../inversions/signal_signature_and_likelihood_intake_inversion.md`
