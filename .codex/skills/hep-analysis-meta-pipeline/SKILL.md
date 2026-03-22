@@ -22,6 +22,7 @@ Use this as the single session-skill entrypoint for the refactored HEP workflow 
 - full end-to-end workflow orchestration
 - stage-by-stage handoff planning
 - deciding which reviewer or generator must run next
+- deciding when sample semantics require intake, data-template, or likelihood-role review before modeling
 - enforcing the refactored pipeline gates
 
 ## Stop Conditions

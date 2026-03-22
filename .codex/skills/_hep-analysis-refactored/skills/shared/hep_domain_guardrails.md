@@ -31,6 +31,13 @@ These rules are binding across the new skill system.
 - Do not replace signed generator-weight sums with raw event counts.
 - Do not double count nominal and alternative samples for the same process in central yields.
 
+## Observed-data and template policy
+
+- Data that enter the likelihood as observed distributions are distinct from data used to build templates, transfer factors, or auxiliary PDFs.
+- If the same underlying dataset contributes in both ways, the event selections must be explicitly disjoint and the overlap policy must be reviewer-visible.
+- Data-driven templates must declare their source region, target use, observable or relation, and closure or decorrelation rationale.
+- In blinded mode, observed data from the blinded signal-region window must not be repurposed into template construction without explicit approval.
+
 ## Background-model and smoothing policy
 
 - For the default H to gammagamma workflow, the nominal background template must be an explicit diphoton sample choice, not a silent merge of low-statistics auxiliary backgrounds.

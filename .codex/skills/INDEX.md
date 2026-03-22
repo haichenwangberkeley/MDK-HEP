@@ -22,7 +22,10 @@ Vendored refactored pattern tree:
 Key bundled reference files:
 
 - `.codex/skills/_hep-analysis-refactored/skills/pipelines/hep_analysis_meta_pipeline.md`
+- `.codex/skills/_hep-analysis-refactored/skills/pipelines/sample_and_template_semantics_pipeline.md`
 - `.codex/skills/_hep-analysis-refactored/skills/inversions/analysis_router_inversion.md`
+- `.codex/skills/_hep-analysis-refactored/skills/inversions/signal_signature_and_likelihood_intake_inversion.md`
 - `.codex/skills/_hep-analysis-refactored/skills/shared/hep_domain_guardrails.md`
 - `.codex/skills/_hep-analysis-refactored/skills/shared/pipeline_logging_contract.md`
 - `.codex/skills/_hep-analysis-refactored/skills/shared/artifact_matrix.md`
+- `.codex/skills/_hep-analysis-refactored/skills/shared/likelihood_sample_contract_schema.md`

@@ -9,6 +9,14 @@ This repository packages the HEP analysis skills from the `GCT-hep-meta` workspa
 - `docs/`: audit, migration, and authoring documentation for the skill system
 - `README_skills.md`: architecture overview for the refactored pattern system
 
+The current pack includes an explicit data and MC sample-semantics subsystem that separates:
+
+- signal-signature and likelihood intake,
+- sample relevance and nominal-vs-alternative decisions,
+- sample contract generation,
+- data-driven template generation,
+- likelihood-role review before modeling or fit setup.
+
 ## Main entrypoint
 
 The canonical session-skill entrypoint is:
@@ -46,9 +54,10 @@ This keeps the exported repo self-contained without making one skill depend on a
 ## Intended workflow
 
 1. Trigger `$hep-analysis-meta-pipeline` or one of the pattern-specific sibling skills.
-2. Maintain the bundled pattern files under `.codex/skills/_hep-analysis-refactored/skills/`.
-3. Keep the historical audit and migration docs under `docs/`.
-4. Version and publish this directory without the analysis code or outputs.
+2. Use `.codex/skills/_hep-analysis-refactored/skills/pipelines/sample_and_template_semantics_pipeline.md` when the task hinges on data or MC sample roles, nominality, normalization, or data-driven templates.
+3. Maintain the bundled pattern files under `.codex/skills/_hep-analysis-refactored/skills/`.
+4. Keep the historical audit and migration docs under `docs/`.
+5. Version and publish this directory without the analysis code or outputs.
 
 ## Local git notes
 

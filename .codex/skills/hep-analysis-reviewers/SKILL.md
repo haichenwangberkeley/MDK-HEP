@@ -1,6 +1,6 @@
 ---
 name: hep-analysis-reviewers
-description: Use when you need the refactored HEP reviewer skills from this installed skill pack to judge whether a stage in the current analysis project is actually acceptable. This covers preflight fact checks, summary consistency, nominal-sample and normalization validation, blinding and visualization checks, statistical readiness, data-MC discrepancy review, and reproducibility or handoff gates.
+description: Use when you need the refactored HEP reviewer skills from this installed skill pack to judge whether a stage in the current analysis project is actually acceptable. This covers preflight fact checks, nominal-sample and normalization validation, likelihood sample-role validation, blinding and visualization checks, statistical readiness, data-MC discrepancy review, and reproducibility or handoff gates.
 ---
 
 # HEP Analysis Reviewers
@@ -13,6 +13,7 @@ Use this skill when the task is to validate a stage, block unsafe progression, o
    - `../_hep-analysis-refactored/skills/reviewers/preflight_fact_check_reviewer.md`
    - `../_hep-analysis-refactored/skills/reviewers/analysis_summary_reviewer.md`
    - `../_hep-analysis-refactored/skills/reviewers/nominal_sample_and_normalization_reviewer.md`
+   - `../_hep-analysis-refactored/skills/reviewers/likelihood_sample_role_reviewer.md`
    - `../_hep-analysis-refactored/skills/reviewers/blinding_and_visualization_reviewer.md`
    - `../_hep-analysis-refactored/skills/reviewers/statistical_readiness_reviewer.md`
    - `../_hep-analysis-refactored/skills/reviewers/data_mc_discrepancy_reviewer.md`
@@ -27,6 +28,7 @@ Use this skill when the task is to validate a stage, block unsafe progression, o
 - factual readiness before execution
 - schema and partition consistency
 - nominal sample and normalization validity
+- likelihood sample-role and data-template boundary validity
 - blinding and plot correctness
 - statistical-readiness gates
 - discrepancy handling

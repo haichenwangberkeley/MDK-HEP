@@ -32,7 +32,7 @@ Use this wrapper when the agent needs to call repository code that inventories s
 
 ## Postconditions
 
-- sample registry, nominal mapping, and normalization evidence exist before cut flows or templates are treated as central
+- sample registry, metadata, and normalization evidence exist before sample contracts, cut flows, or templates are treated as central
 
 ## Call procedure
 
@@ -50,10 +50,14 @@ Use this wrapper when the agent needs to call repository code that inventories s
 
 - the nominal-versus-alternative distinction is explicit
 - normalization artifacts are reviewer-ready
+- the wrapper output is treated as an input to semantic review, not as the final statement of likelihood role
 - any sample ambiguity is routed to `sample_strategy_inversion.md`
 
 ## Related skills
 
+- `../inversions/signal_signature_and_likelihood_intake_inversion.md`
 - `../generators/sample_semantics_generator.md`
+- `../generators/data_driven_template_generator.md`
 - `../reviewers/nominal_sample_and_normalization_reviewer.md`
+- `../reviewers/likelihood_sample_role_reviewer.md`
 - `../inversions/sample_strategy_inversion.md`

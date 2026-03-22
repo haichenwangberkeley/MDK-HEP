@@ -14,6 +14,10 @@ Use this reference when sample naming, metadata matching, or nominal background 
 - The nominal background template should be a clear diphoton MC choice rather than an opaque merge of many low-statistics auxiliary samples.
 - The nominal template choice must document the selected mass window and any sideband normalization to observed data.
 - Low-statistics auxiliary samples can inform checks or variations, but they should not silently become the central template.
+- Prompt diphoton production is the default irreducible background class for the diphoton signature.
+- Gamma-plus-jet and jet-plus-jet processes are reducible backgrounds only when fake-photon contamination is relevant at the analysis level.
+- Processes that only produce the diphoton signature through vanishingly small higher-order or fake paths should remain negligible unless the analysis has evidence to keep them.
+- NT-like or other inverted-quality data samples are template-source candidates, not observed-data likelihood terms, unless a disjoint and explicitly approved use says otherwise.
 
 ## When to escalate
 

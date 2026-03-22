@@ -10,11 +10,13 @@ Derived from:
 
 ## Review scope
 
-Verify that sample identity, process role, nominal-versus-alternative status, and normalization are explicit enough for central yields and fits.
+Verify that sample identity, nominal-versus-alternative status, and normalization are explicit enough for central yields, templates, and fits.
 
 ## Required evidence
 
+- signal-signature and likelihood-intake decision record
 - sample registry
+- sample contract set
 - nominal sample selection record
 - normalization table
 - metadata resolution log
@@ -22,7 +24,7 @@ Verify that sample identity, process role, nominal-versus-alternative status, an
 
 ## Criteria
 
-- `pass`: each sample has one role, one normalization path, and one central-versus-alternative status
+- `pass`: each relevant process has one central nominal path, one explicit normalization mode, and any alternatives are segregated from the central prediction
 - `conditional_pass`: non-central samples or optional metadata gaps are logged without affecting central outputs
 - `block`: the central nominal sample set is ambiguous or the normalization inputs are incomplete
 - `fail`: central yields would double count processes or misuse metadata
@@ -32,15 +34,19 @@ Verify that sample identity, process role, nominal-versus-alternative status, an
 - multiple candidate nominal samples for the same process
 - raw event counts used instead of signed generator-weight sums
 - central results using `36.0 fb^-1` because of stale policy text instead of the repository default `36.1 fb^-1`
-- background template choice not traceable to an explicit nominal diphoton sample
+- background normalization mode is missing for a process that is intended to be theory-constrained, CR-constrained, or floating
+- background template choice is not traceable to an explicit nominal diphoton sample
 
 ## Required remediation guidance
 
+- rerun `../inversions/signal_signature_and_likelihood_intake_inversion.md` when the authority for nominal choice is missing
 - use `../inversions/sample_strategy_inversion.md` to pick the correct branch
 - rerun `../generators/sample_semantics_generator.md` after the decision record is updated
+- run `likelihood_sample_role_reviewer.md` when data, template, or validation roles remain mixed
 - escalate if repository facts and metadata cannot establish a unique central sample set
 
 ## Related skills
 
+- `likelihood_sample_role_reviewer.md`
 - `../shared/open_data_dataset_facts.md`
 - `../shared/hep_domain_guardrails.md`
